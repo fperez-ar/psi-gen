@@ -8,3 +8,6 @@ dependencies = [
     "pyglet>=2.1.6",
     "pyyaml>=6.0.2",
 ]
+
+[project.scripts]
+test = "main"
