@@ -1,0 +1,56 @@
+# game_data/options.yaml
+- name: rest_option
+  text: "Take a rest"
+  effects:
+    - name: health
+      value: 10
+    - name: stamina
+      value: 20
+    - name: time
+      value: -5
+
+- name: work_hard_option
+  text: "Work overtime"
+  effects:
+    - name: productivity
+      value: 15
+    - name: stamina
+      value: -15
+    - name: morale
+      value: -5
+
+- name: team_meeting_option
+  text: "Hold team meeting"
+  effects:
+    - name: morale
+      value: 10
+    - name: coordination
+      value: 8
+    - name: time
+      value: -3
+
+- name: skip_option
+  text: "Skip this activity"
+  effects:
+    - name: time
+      value: 5
+
+- name: invest_resources_option
+  text: "Invest extra resources"
+  effects:
+    - name: resources
+      value: -20
+    - name: quality
+      value: 15
+    - name: productivity
+      value: 10
+
+- name: quick_fix_option
+  text: "Apply quick fix"
+  effects:
+    - name: time
+      value: 2
+    - name: quality
+      value: -5
+    - name: technical_debt
+      value: 10

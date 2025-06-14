@@ -200,5 +200,7 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-
+# custom
+save.yaml
+*.png
 .DS_Store

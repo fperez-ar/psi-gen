@@ -1,0 +1,24 @@
+# game_data/scenes/day2_scene3.yaml
+bg_images:
+  - "assets/office_evening.png"
+fg_text: |
+  As evening approaches, you review the day's progress. The team has accomplished a lot, but at what cost?
+  
+  Some team members are still working, while others have already left.
+  
+  How do you close out the day?
+stats:
+  morale: 40
+  stamina: 50
+  resources: 60
+options:
+  - rest_option
+  - team_meeting_option
+  - quick_fix_option
+button_text: "End Day"
+outcome:
+  expected:
+    - name: morale
+      value: 10
+    - name: stamina
+      value: 20

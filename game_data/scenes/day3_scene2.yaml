@@ -1,0 +1,25 @@
+# game_data/scenes/day3_scene2.yaml
+bg_images:
+  - "assets/office_recovery.png"
+fg_text: |
+  The crisis has been managed, but the team is exhausted. The deadline is tomorrow.
+  
+  You need to make a final push to deliver the project.
+  
+  What's your final strategy?
+stats:
+  morale: 25
+  stamina: 30
+  resources: 35
+options:
+  - work_hard_option
+  - rest_option
+  - invest_resources_option
+  - quick_fix_option
+button_text: "Final Push"
+outcome:
+  expected:
+    - name: productivity
+      value: 15
+    - name: quality
+      value: 10

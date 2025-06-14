@@ -1,0 +1,24 @@
+# game_data/scenes/day1_scene1.yaml
+bg_images:
+  - "assets/office_morning.png"
+fg_text: |
+  Welcome to your first day as project manager!
+  
+  The team is gathered for the kickoff meeting. Everyone seems excited but also a bit nervous about the tight deadline.
+  
+  How do you want to start the project?
+stats:
+  morale: 50
+  stamina: 100
+  resources: 100
+options:
+  - team_meeting_option
+  - work_hard_option
+  - skip_option
+button_text: "Make Decision"
+outcome:
+  expected:
+    - name: morale
+      value: 10
+    - name: coordination
+      value: 8

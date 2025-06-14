@@ -1,0 +1,24 @@
+# game_data/scenes/day1_scene2.yaml
+bg_images:
+  - "assets/office_afternoon.png"
+fg_text: |
+  The afternoon arrives quickly. Your team has started working on the initial tasks.
+  
+  A junior developer approaches you with concerns about the technical approach. They suggest investing more time in planning.
+  
+  What's your response?
+stats:
+  morale: 55
+  stamina: 90
+  resources: 100
+options:
+  - invest_resources_option
+  - quick_fix_option
+  - rest_option
+button_text: "Proceed"
+outcome:
+  expected:
+    - name: quality
+      value: 15
+    - name: resources
+      value: -20

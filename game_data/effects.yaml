@@ -1,0 +1,24 @@
+# game_data/effects.yaml
+- name: health_boost
+  text: "Increases health by a small amount"
+  effects:
+    - name: health
+      value: 5
+
+- name: stamina_drain
+  text: "Reduces stamina significantly"
+  effects:
+    - name: stamina
+      value: -10
+
+- name: morale_boost
+  text: "Improves team morale"
+  effects:
+    - name: morale
+      value: 8
+
+- name: resource_cost
+  text: "Consumes resources"
+  effects:
+    - name: resources
+      value: -15

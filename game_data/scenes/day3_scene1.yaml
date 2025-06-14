@@ -1,0 +1,24 @@
+# game_data/scenes/day3_scene1.yaml
+bg_images:
+  - "assets/office_crisis.png"
+fg_text: |
+  CRISIS! The main server has crashed overnight. The team is in panic mode.
+  
+  You need to act fast to minimize damage and keep the project on track.
+  
+  What's your immediate response?
+stats:
+  morale: 30
+  stamina: 45
+  resources: 55
+options:
+  - quick_fix_option
+  - invest_resources_option
+  - team_meeting_option
+button_text: "Act Now"
+outcome:
+  expected:
+    - name: time
+      value: 2
+    - name: resources
+      value: -20

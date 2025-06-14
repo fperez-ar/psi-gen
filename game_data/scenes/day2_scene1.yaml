@@ -1,0 +1,25 @@
+# game_data/scenes/day2_scene1.yaml
+bg_images:
+  - "assets/office_morning.png"
+  - "assets/overlay_coffee.png"
+fg_text: |
+  Day 2 begins with a strong coffee and a full task board.
+  
+  The team is making progress, but some members look tired from yesterday's overtime.
+  
+  How do you want to manage the team's energy?
+stats:
+  morale: 45
+  stamina: 70
+  resources: 80
+options:
+  - rest_option
+  - work_hard_option
+  - team_meeting_option
+button_text: "Continue"
+outcome:
+  expected:
+    - name: stamina
+      value: 20
+    - name: health
+      value: 10

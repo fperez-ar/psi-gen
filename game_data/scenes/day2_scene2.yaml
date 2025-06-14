@@ -1,0 +1,24 @@
+# game_data/scenes/day2_scene2.yaml
+bg_images:
+  - "assets/meeting_room.png"
+fg_text: |
+  A client calls with an urgent feature request. It's not in the original scope, but they insist it's critical.
+  
+  Accepting means more work, but refusing might strain the relationship.
+  
+  What do you decide?
+stats:
+  morale: 50
+  stamina: 65
+  resources: 75
+options:
+  - work_hard_option
+  - invest_resources_option
+  - skip_option
+button_text: "Decide"
+outcome:
+  expected:
+    - name: productivity
+      value: 15
+    - name: resources
+      value: -20
