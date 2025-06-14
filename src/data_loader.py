@@ -45,14 +45,9 @@ class DataLoader:
         
         return self.options_cache
     
-    def load_scene(self, scene_file: str) -> Scene:
-        """Load a single scene from YAML"""
-        with open(self.data_dir / scene_file, 'r') as f:
-            data = yaml.safe_load(f)
-        
-        # Create options from references
+    def get_scene(self, scene_yaml: str) -> Scene:
         options = []
-        for opt_name in data['options']:
+        for opt_name in scene_yaml['options']:
             if opt_name in self.options_cache:
                 # Create a copy to avoid shared state
                 opt = self.options_cache[opt_name]
@@ -63,17 +58,24 @@ class DataLoader:
                 ))
         
         outcome = SceneOutcome(
-            expected=[Effect(**e) for e in data['outcome']['expected']]
+            expected=[Effect(**e) for e in scene_yaml['outcome']['expected']]
         )
         
         return Scene(
-            bg_images=data['bg_images'],
-            fg_text=data['fg_text'],
-            stats=data.get('stats', {}),
+            bg_images=scene_yaml['bg_images'],
+            fg_text=scene_yaml['fg_text'],
+            stats=scene_yaml.get('stats', {}),
             options=options,
-            button_text=data['button_text'],
+            button_text=scene_yaml['button_text'],
             outcome=outcome
         )
+
+    def get_scene_from_file(self, scene_file: str) -> Scene:
+        """Load a single scene from YAML"""
+        with open(self.data_dir / scene_file, 'r') as f:
+            data = yaml.safe_load(f)
+        return self.get_scene(data)
+
     
     def load_days(self) -> List[Day]:
         """Load all days and their scenes"""
@@ -83,8 +85,13 @@ class DataLoader:
         days = []
         for day_data in days_data:
             scenes = []
-            for scene_file in day_data['scenes']:
-                scenes.append(self.load_scene(scene_file))
+            for scene_data in day_data['scenes']:
+              if 'file' in scene_data.keys():
+                print('loading from file')
+                scene_object = self.get_scene_from_file(scene_data['file'])
+              else:
+                scene_object = self.get_scene(scene_data)
+              scenes.append(scene_object)
             
             days.append(Day(
                 text=day_data['text'],

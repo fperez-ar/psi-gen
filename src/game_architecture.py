@@ -9,11 +9,7 @@ from src.data_loader import DataLoader
 from src.effect import Effect
 from src.scene import Scene
 from src.day import Day
-from src.ui import (
-  SceneView,
-  DaySummaryView,
-  GameCompleteView
-)
+from src.ui import SceneView
 
 @dataclass
 class GameState:

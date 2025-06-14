@@ -106,10 +106,18 @@ class SceneView(UIComponent):
         
     def _setup_background(self):
         """Load and setup background images"""
-        # for img_path in self.scene.bg_images:
-        #     image = pyglet.image.load(img_path)
-        #     sprite = pyglet.sprite.Sprite(image, batch=self.batch)
-        #     self.bg_sprites.append(sprite)
+        for img_path in self.scene.bg_images:
+          try:
+              image = pyglet.image.load(img_path)
+              sprite = pyglet.sprite.Sprite(image, batch=self.batch)
+              self.bg_sprites.append(sprite)
+          except:
+              # Create a colored rectangle as fallback
+              rect = pyglet.shapes.Rectangle(
+                  0, 0, self.window_width, self.window_height,
+                  color=(50, 50, 80),  # Dark blue background
+                  batch=self.batch
+              )
     
     def _setup_text(self):
         """Setup foreground text"""
@@ -295,6 +303,7 @@ class GameCompleteView(UIComponent):
             "Game Complete!\nThanks for playing!",
             x=window_width // 2,
             y=window_height // 2,
+            width=1024, # TODO: dynamically add width here
             anchor_x='center',
             anchor_y='center',
             font_size=32,

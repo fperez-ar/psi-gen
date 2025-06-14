@@ -2,7 +2,7 @@
 import pyglet
 from pyglet.window import key
 from src.game_architecture import DaySceneGame
-from src.ui import SceneView
+from src.ui import SceneView, DaySummaryView, GameCompleteView
 
 class MainGame(DaySceneGame):
     """Extended game class with full functionality"""

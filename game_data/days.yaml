@@ -1,16 +1,39 @@
 # game_data/days.yaml
 - text: "Day 1: Project Kickoff"
   scenes:
-    - "scenes/day1_scene1.yaml"
-    - "scenes/day1_scene2.yaml"
+    - name: day 1
+      bg_images:
+          - "assets/office_morning.png"
+      fg_text: |
+        "Welcome to your first day as project manager!
+          (this is a test)
+        The team is gathered for the kickoff meeting. Everyone seems excited but also a bit nervous about the tight deadline.
+        
+        How do you want to start the project?"a
+      stats:
+        morale: 50
+        stamina: 100
+        resources: 100
+      options:
+        - team_meeting_option
+        - work_hard_option
+        - skip_option
+      button_text: "Make Decision"
+      outcome:
+        expected:
+          - name: morale
+            value: 10
+          - name: coordination
+            value: 8
+    - file: "scenes/day1_scene2.yaml"
 
 - text: "Day 2: First Sprint"
   scenes:
-    - "scenes/day2_scene1.yaml"
-    - "scenes/day2_scene2.yaml"
-    - "scenes/day2_scene3.yaml"
+    - file: "scenes/day2_scene1.yaml"
+    - file: "scenes/day2_scene2.yaml"
+    - file: "scenes/day2_scene3.yaml"
 
 - text: "Day 3: Crisis Management"
   scenes:
-    - "scenes/day3_scene1.yaml"
-    - "scenes/day3_scene2.yaml"
+    - file: "scenes/day3_scene1.yaml"
+    - file: "scenes/day3_scene2.yaml"
